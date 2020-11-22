@@ -1,0 +1,175 @@
+/* 这里设置了：index页的样式 */
+*{margin: 0;padding: 0;}
+ul,ol{list-style: none;}
+img{display: block;}
+a{text-decoration: none;color: cornflowerblue;}
+h2,h3{font-size: 16px;}
+body{ font-family:  consolas,Times,serif;}
+.l{float: left;}
+.r{float: right;}
+.clear{content: "";display: block;}
+/* 重置css的默认样式 */
+body{
+   
+    
+  background-image:   linear-gradient(125deg,#f04d0cda,#b3ee11,#52ee09,#26da4d, #0b77f1,#cd0adf,#eb0b68,#f30707e0);
+  /* 线性渐变（Linear Gradients）- 125deg为从左上向右下渐变方向 */
+   
+  background-size: 800%;
+  /* 将背景尺寸设置为8倍，对应8种颜色 */
+  animation: move 16s ; 
+
+  /* 动画完成时间 */
+  height: 100vh;
+  display: flex;
+  /* 使用弹性布局 */
+  justify-content: space-around;
+  /* space-between：主轴方向两端对齐，项目之间的间隔都相等。 */
+  align-items: stretch;
+  /* stretch（默认值）：交叉轴方向如果项目未设置高度或设为auto，将占满整个容器的高度 */
+
+}
+ 
+  
+  .text{
+    color: white;
+    text-align: center;
+    /* 文本对齐方式居中 */
+    /* transform:rotate(100eg); */
+    margin: 325px;
+    font-size: 22px;
+  }
+  /* 文本样式 */
+  
+  @keyframes move { 
+    0%{
+      background-position: 0% 50%;
+    }
+    /* 动画开始时背景位于一半位置*/
+    50%{
+      background-position: 100% 50%;
+    }
+    100%{
+      background-position: 0% 50%;
+    }
+    /* 最后回到初始的背景 */
+  } 
+  .navbar{
+    position: fixed;
+    /* 固定导航栏 */
+    background-color: transparent;
+    width: 100%;
+    padding: 10px ;
+    /* 填充大小 */
+    top: 0;
+    z-index: 999;
+    /* z-index 属性指定一个元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面。 */
+    
+  }
+  
+  .inner-width{
+    float:left;
+    max-width: 1500px;
+    margin: auto;
+    /* 边距依赖浏览器 */
+    padding: 0 10px;
+  }
+  
+  .navbar .inner-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+   
+   
+  /* 超链接样式 */
+  .navbar-menu a{
+    color: #fff;
+    font-size: 25px;
+    font-weight: 500;
+    margin-left:1px;
+     
+  }  
+  
+  .navbar-menu a:hover{
+    color: #48dbfb !important;
+  }
+  /* 指针悬浮时的样式 */
+  /*打字机  */
+  .text1{
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+}
+.text1 .guangbiao{
+    color: #000;
+    animation: shanshuo 0.5s linear infinite;
+    /* 线性渐变 */
+}
+/* 通过设置透明度来达到闪烁效果 */
+@keyframes shanshuo{
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* 流光按钮 */
+.open a{
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  transform:  translate(-50%,-50%);
+  /* translate()方法，根据左(X轴)和顶部(Y轴)位置给定的参数，从当前元素位置移动 */
+  text-align: center;
+  background-color: #000000;
+  line-height: 60px;
+  font-size: 24px;
+  font-family: sans-serif; 
+  color: #ffffff;
+  text-decoration: none;
+  box-sizing: border-box;
+  background-image: linear-gradient(135deg,#14ffe9, #ffeb3b, #ff00e0,#26da4d);
+  background-size: 400%;
+  /* 放大背景图 */
+  animation: show 8s linear infinite;
+  /* 动画时间 */
+  border-radius: 30px;
+  /* 添加圆角边框 */
+  z-index: 1;
+}
+.open a:hover{
+  animation: animate 8s linear infinite;
+}
+
+@keyframes animate{
+  0%{
+      background-position: 0%;
+  }
+  100%{
+      background-position: 400%;
+  }
+}
+/* :before 选择器向选定的元素前插入内容 */
+.open a:before{
+  content: '';
+  position:absolute;
+  top:-5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+  background-image: linear-gradient(90deg,#14ffe9, #ffeb3b, #ff00e0,#26da4d);
+  background-size: 400%;
+  border-radius: 40px;
+  transition: 0.5s;
+  
+}
+.open a:hover:before
+{
+  filter: blur(20px);
+  /* blur(px) 	给图像设置高斯模糊。"radius"一值设定高斯函数的标准差，或者是屏幕上以多少像素融在一起， 所以值越大越模糊； */
+  opacity: 1;
+  animation: show 8s linear infinite;
+}

@@ -1,0 +1,84 @@
+/*选择所有，默认外边距为8px*/
+/* 照片墙特效 */
+*{
+	margin:0px;
+	padding:0px;
+}
+ 
+.box{
+	width:900px;
+	height:450px;
+	/*background:blue;*/
+	/*position margin使用绝对居中*/
+	position: relative;/*设四个方向，窗口居中*/
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	margin:auto;/*auto在父容器中水平居中*/
+	/*margin:100px 50px;上下、左右 四个：顺时针 上右下左*/
+}
+ 
+.pic{
+	background:rgb(0, 174, 255);
+	width:150px;/*只设置宽度，高会随着宽度的改变，按比例缩放*/
+	margin-left:20px;
+	padding:5px;/*扩充内部的边距，增加本身的宽度和高度*/
+	border:5px solid rgb(0, 183, 255);/*边框：宽度、样式、颜色 dashed虚线*/
+	/*border-radius:50%;/*剪切圆形，根据指定的半径改变四角的弧度*/
+	box-shadow: 5px 5px 7px rgba(33,33,33,.7)
+}
+ 
+ 
+.pic1{
+	/*transform:改变标签的形态：大小、位置、透明、角度...
+	  rotate:角度，deg(单位)  正值：顺时针
+	  scale:缩放 默认值为1  >1放大   <1缩小*/
+	transform:rotate(-30deg) scale(1);
+	overflow: hidden;
+}
+ 
+.pic2{
+	transform:rotate(-10deg) scale(0.8);
+	
+}
+.pic3{
+	transform:rotate(20deg) scale(1.2);
+	
+}
+.pic4{
+	transform:rotate(-30deg) scale(1);
+	
+}
+.pic5{
+	transform:rotate(10deg) scale(1.2);
+	
+}
+.pic6{
+	transform:rotate(-20deg) scale(1.2);
+	
+}
+.pic7{
+	transform:rotate(-40deg) scale(0.8);
+	
+}
+.pic8{
+	transform:rotate(-10deg) scale(1.5);
+	
+}
+.pic9{
+	transform:rotate(10deg) scale(0.7);
+	
+}
+.pic10{
+	transform:rotate(-50deg) scale(1.2);
+	
+}	
+
+/*HOVER：悬浮事件*/
+.pic:HOVER{
+	transition:all 2s;/*过渡*/
+	transform:rotate(0deg) scale(1.5);
+	position:relative;
+	z-index:10;
+}

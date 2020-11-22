@@ -1,0 +1,608 @@
+/* 别看这篇代码，笨比方法 */
+/* 主要实现了词云样式和文字设置 */
+#textt{
+	position: absolute;
+	left: 90%;
+	top:40%;
+	text-orientation: sideways;
+	writing-mode: vertical-rl;
+	font-family:  consolas;
+	font-size: 50px;
+	color:rgb(250, 3, 155);
+}
+#textt1{
+	position: relative;
+	left:5%;
+	top:15%;
+	 
+	font-family:  consolas;
+	font-size: 50px;
+	color:rgb(250, 3, 155);
+}
+#textt2{
+	position: relative;
+	left:20%;
+	top:30%;
+	 
+	font-family:  consolas;
+	font-size: 30px;
+	color:rgb(250, 3, 155);
+}
+.box1{
+	width:200px;
+	height:200px;
+	/*background:blue;*/
+	/*position margin使用绝对居中*/
+	position: relative;/*设四个方向，窗口居中*/
+	top:35%;
+	left:5%;
+	border:5px solid rgb(0, 183, 255);
+	 /*auto在父容器中水平居中*/
+    /*margin:100px 50px;上下、左右 四个：顺时针 上右下左*/
+	background-color: #f9ed69;
+	transform:rotate(15deg) scale(1);
+	overflow: hidden;
+	box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+        
+}
+     #text1{
+	  font-family:  consolas ,Times, serif;
+      font-size: 25px;
+      color:#393e46;
+      padding:15px;
+}
+.box1:HOVER{
+	transition:all 2s;/*过渡*/
+	transform:rotate(0deg) scale(1.5);
+	position:relative;
+	z-index:10;
+}
+.box2{
+	width:200px;
+	height:450px;
+	/*background:blue;*/
+	/*position margin使用绝对居中*/
+	position: relative;/*设四个方向，窗口居中*/
+	top:20%;
+	left: 10%;
+	 /*auto在父容器中水平居中*/
+	/*margin:100px 50px;上下、左右 四个：顺时针 上右下左*/
+}
+.tex{
+	background:transparent;
+	width:150px;/*只设置宽度，高会随着宽度的改变，按比例缩放*/
+	margin-left:20px;
+	padding:10px;/*扩充内部的边距，增加本身的宽度和高度*/
+	font-family: consolas;
+	color: rgb(255, 255, 255);
+}
+ 
+.tex0{
+	/*transform:改变标签的形态：大小、位置、透明、角度...
+	  rotate:角度，deg(单位)  正值：顺时针
+	  scale:缩放 默认值为1  >1放大   <1缩小*/
+	transform:rotate(-10deg) scale(1);
+	overflow: hidden;
+	font-size: 20px;
+	color: #e9e7ef;
+}
+ .tex1{
+	/*transform:改变标签的形态：大小、位置、透明、角度...
+	  rotate:角度，deg(单位)  正值：顺时针
+	  scale:缩放 默认值为1  >1放大   <1缩小*/
+	transform:rotate(-30deg) scale(1);
+	overflow: hidden;
+	font-size: 20px;
+	color: #ff461f;
+
+}
+ 
+.tex2{
+	transform:rotate(-10deg) scale(0.8);
+	font-size: 21px;
+	color: #afdd22;
+
+}
+.tex3{
+	transform:rotate(20deg) scale(1.2);
+	font-size: 23px;
+	color: #ff4777;
+
+}
+.tex4{
+	transform:rotate(-30deg) scale(1);
+	font-size: 22px;
+	color:#f47983;
+
+}
+.tex5{
+	transform:rotate(10deg) scale(1);
+	font-size: 24px;
+	color: #4b5cc4;
+
+}
+.tex6{
+	transform:rotate(-20deg) scale(1);
+	font-size: 22px;
+	color: #f05654;
+
+}
+.tex7{
+	transform:rotate(-40deg) scale(0.8);
+	font-size: 21px;
+	color: #f2be45;
+
+}
+.tex8{
+	transform:rotate(-10deg) scale(1);
+	font-size: 24px;
+	color: #8d4bbb;
+
+}
+.tex9{
+	transform:rotate(10deg) scale(0.7);
+	font-size: 21px;
+	color:#eedeb0;
+
+}
+.tex10{
+	transform:rotate(-50deg) scale(1.2);
+	font-size: 22px;
+	color: #ff0097;
+
+}	
+
+/*HOVER：悬浮事件*/
+.tex:HOVER{
+	transition:all 2s;/*过渡*/
+	transform:rotate(0deg) scale(1.5);
+	position:relative;
+	z-index:10;
+}
+
+.pict{
+	position: absolute;
+	width: 300px;
+	height: 200px;
+	top: 20%;
+	left: 30%;
+	background: url(../图片/images1/img1.jpg);
+	background-size: contain;
+	overflow: hidden;
+}
+
+.pict::before{
+	/* 利用伪元素做文字说明 */
+	content: '方舱医院的修建';
+	position: absolute;
+	top: -200px;
+	left: 0;
+	width: 300px;
+	height: 200px;
+	text-align: center;
+	font-size: 30px;
+	color: #fff;
+	line-height: 200px;
+	/* a代表颜色不透明度 */
+	background-color: rgba(0,0,0, .2);
+	 
+
+}
+.pict:hover::before{
+	top: 0;
+	/* 动画名称，时长 */
+	animation: drop 2s;
+}
+/* 下降动画 */
+@keyframes drop{
+	0%{
+		top: -375px;
+	}
+	5%{
+		top: 0;
+	}
+	10%{
+		top: -30px;
+	}
+	20%{
+		top: 0;
+	}
+	30%{
+		top: -20px;
+	}
+	40%
+	{
+		top: 0;
+	}
+	50%{
+		top: -15px;
+	}
+	60%{
+		top:0;
+	}
+	70%{
+		top: -10px;
+	}
+	80%{
+		top: 0;
+	}
+	90%{
+		top: -5px;
+	}
+	100%{
+		top: 0;
+	}
+} 
+.pict1{
+	position:  absolute;
+	width: 300px;
+	height: 200px;
+	top: 50%;
+	left: 30%;
+	background: url(../图片/images1/img2.jpg);
+	background-size: contain;
+	overflow: hidden;
+}
+
+.pict1::before{
+	/* 利用伪元素做文字说明 */
+	content: '守护天使';
+	position: absolute;
+	top: -200px;
+	left: 0;
+	width: 300px;
+	height: 200px;
+	text-align: center;
+	font-size: 30px;
+	color: #fff;
+	line-height: 200px;
+	/* a代表颜色不透明度 */
+	background-color: rgba(0,0,0, .2);
+	 
+
+}
+.pict1:hover::before{
+	top: 0;
+	/* 动画名称，时长 */
+	animation: drop 2s;
+}
+/* 下降动画 */
+@keyframes drop{
+	0%{
+		top: -375px;
+	}
+	5%{
+		top: 0;
+	}
+	10%{
+		top: -30px;
+	}
+	20%{
+		top: 0;
+	}
+	30%{
+		top: -20px;
+	}
+	40%
+	{
+		top: 0;
+	}
+	50%{
+		top: -15px;
+	}
+	60%{
+		top:0;
+	}
+	70%{
+		top: -10px;
+	}
+	80%{
+		top: 0;
+	}
+	90%{
+		top: -5px;
+	}
+	100%{
+		top: 0;
+	}
+} 
+.pict3{
+	position: absolute;
+	width: 300px;
+	height: 200px;
+	top:80%;
+	left: 30%;
+	background: url(../图片/images1/img3.jpg);
+	background-size: contain;
+	overflow: hidden;
+	float: fix;
+}
+
+.pict3::before{
+	/* 利用伪元素做文字说明 */
+	content: '在高铁上睡着的终南山';
+	position: absolute;
+	top: -200px;
+	left: 0;
+	width: 300px;
+	height: 200px;
+	text-align: center;
+	font-size: 30px;
+	color: #fff;
+	line-height: 200px;
+	/* a代表颜色不透明度 */
+	background-color: rgba(0,0,0, .2);
+	 
+
+}
+.pict3:hover::before{
+	top: 0;
+	/* 动画名称，时长 */
+	animation: drop 2s;
+}
+/* 下降动画 */
+@keyframes drop{
+	0%{
+		top: -375px;
+	}
+	5%{
+		top: 0;
+	}
+	10%{
+		top: -30px;
+	}
+	20%{
+		top: 0;
+	}
+	30%{
+		top: -20px;
+	}
+	40%
+	{
+		top: 0;
+	}
+	50%{
+		top: -15px;
+	}
+	60%{
+		top:0;
+	}
+	70%{
+		top: -10px;
+	}
+	80%{
+		top: 0;
+	}
+	90%{
+		top: -5px;
+	}
+	100%{
+		top: 0;
+	}
+}        
+.pict4{
+	position: absolute;
+	width: 300px;
+	height: 200px;
+	top:  80%;
+	left: 60%;
+	background: url(../图片/images1/img4\ .jpg);
+	background-size: contain;
+	overflow: hidden;
+}
+
+.pict4::before{
+	/* 利用伪元素做文字说明 */
+	content: '宅家学习的时光';
+	position: absolute;
+	top: -200px;
+	left: 0;
+	width: 300px;
+	height: 200px;
+	text-align: center;
+	font-size: 30px;
+	color: #fff;
+	line-height: 200px;
+	/* a代表颜色不透明度 */
+	background-color: rgba(0,0,0, .2);
+	 
+
+}
+.pict4:hover::before{
+	top: 0;
+	/* 动画名称，时长 */
+	animation: drop 2s;
+}
+/* 下降动画 */
+@keyframes drop{
+	0%{
+		top: -375px;
+	}
+	5%{
+		top: 0;
+	}
+	10%{
+		top: -30px;
+	}
+	20%{
+		top: 0;
+	}
+	30%{
+		top: -20px;
+	}
+	40%
+	{
+		top: 0;
+	}
+	50%{
+		top: -15px;
+	}
+	60%{
+		top:0;
+	}
+	70%{
+		top: -10px;
+	}
+	80%{
+		top: 0;
+	}
+	90%{
+		top: -5px;
+	}
+	100%{
+		top: 0;
+	}
+}        
+.pict5{
+	position: absolute;
+	width: 300px;
+	height: 200px;
+	top: 50%;
+	left: 60%;
+	background: url(../图片/images1/img5.jpg);
+	background-size: contain;
+	overflow: hidden;
+	 
+}
+
+.pict5::before{
+	/* 利用伪元素做文字说明 */
+	content: '抗击疫情阶段性的成功';
+	position: absolute;
+	top: -200px;
+	left: 0;
+	width: 300px;
+	height: 200px;
+	text-align: center;
+	font-size: 30px;
+	color: #fff;
+	line-height: 200px;
+	/* a代表颜色不透明度 */
+	background-color: rgba(0,0,0, .2);
+	 
+
+}
+.pict5:hover::before{
+	top: 0;
+	/* 动画名称，时长 */
+	animation: drop 2s;
+}
+/* 下降动画 */
+@keyframes drop{
+	0%{
+		top: -375px;
+	}
+	5%{
+		top: 0;
+	}
+	10%{
+		top: -30px;
+	}
+	20%{
+		top: 0;
+	}
+	30%{
+		top: -20px;
+	}
+	40%
+	{
+		top: 0;
+	}
+	50%{
+		top: -15px;
+	}
+	60%{
+		top:0;
+	}
+	70%{
+		top: -10px;
+	}
+	80%{
+		top: 0;
+	}
+	90%{
+		top: -5px;
+	}
+	100%{
+		top: 0;
+	}
+}    
+.pict6{
+	position: absolute;
+	width: 300px;
+	height: 200px;
+	top:20%;
+	left: 60%;
+	background: url(../图片/images1/img6.jpg);
+	background-size: contain;
+	overflow: hidden;
+	 
+}
+
+.pict6::before{
+	/* 利用伪元素做文字说明 */
+	content: '参加美国大选的特朗普';
+	position: absolute;
+	top: -200px;
+	left: 0;
+	width: 300px;
+	height: 200px;
+	text-align: center;
+	font-size: 30px;
+	color: #fff;
+	line-height: 200px;
+	/* a代表颜色不透明度 */
+	background-color: rgba(0,0,0, .2);
+	 
+
+}
+.pict6:hover::before{
+	top: 0;
+	/* 动画名称，时长 */
+	animation: drop 2s;
+}
+/* 下降动画 */
+@keyframes drop{
+	0%{
+		top: -375px;
+	}
+	5%{
+		top: 0;
+	}
+	10%{
+		top: -30px;
+	}
+	20%{
+		top: 0;
+	}
+	30%{
+		top: -20px;
+	}
+	40%
+	{
+		top: 0;
+	}
+	50%{
+		top: -15px;
+	}
+	60%{
+		top:0;
+	}
+	70%{
+		top: -10px;
+	}
+	80%{
+		top: 0;
+	}
+	90%{
+		top: -5px;
+	}
+	100%{
+		top: 0;
+	}
+}            
+ 
+   
+    
+   
+   

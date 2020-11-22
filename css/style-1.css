@@ -1,0 +1,227 @@
+@charset "utf-8";
+/* 这里设置了主页的页面布局以及，滚动条特效和书本特效 */
+a{text-decoration: none;color: rgb(255, 255, 255);}
+html,body {
+	 
+	margin: 0  ;
+	text-align:center;
+	/* height:3960px; */
+	padding: 0;
+}
+.div1{
+	margin:0  ;
+	height:3000px;
+	font-family: consolas, Times, serif;
+}
+#div1{
+	font-family: consolas, Times, serif;
+	font-size: 25px;
+	height:70px;
+}
+.nav{
+ 
+    position:fixed;  
+	margin:0  ;
+	padding:0;
+	width: 100%;
+	height: 70px;
+	background-color: #EEEEEE;
+	background-image: linear-gradient(135deg,#14ffe9, #ffeb3b, #ff00e0,#26da4d);
+	z-index: 999;
+	/* 防止被元素覆盖*/
+}
+.nav li{
+	color:#333333;
+	list-style: none;
+	float:left;
+	width:150px;
+	line-height: 70px;
+	text-align: center;
+}
+ 
+.nav .logo{
+	line-height: 70px;
+	text-align: center;
+	width:250px;
+	
+	 
+}
+a:hover{
+    color: #48dbfb !important;
+  }
+.mid{
+/*	float:left;*/
+	width: 100%;
+	height:2880px;
+	background-color: #FFFFFF;
+}
+.image1{
+	float:right;
+	width:270px;
+	height:486px;
+	margin-bottom: 0;
+	margin-right: 0;
+}
+.bottom{
+	float:left;
+	width:100%;
+	height:120px;
+	text-align:center;
+	background-color: #000000;
+}
+.bottom .text{
+	color:#eeeeee;
+	list-style: none;
+}
+
+/*-------------------------------------------------*/
+
+
+/*在page的div里填充一个有高度无宽度的div拉大每一个页面至满屏*/
+.first_page{
+	list-style: none;
+	float:left;
+	width:100%;
+	height:960px;
+	background: #00c9ff;  /* fallback for old browsers */      background: -webkit-linear-gradient(to right, rgb(0, 201, 255), rgb(146, 254, 157));  /* Chrome 10-25, Safari 5.1-6 */      background: linear-gradient(to right, rgb(0, 201, 255), rgb(146, 254, 157)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */      
+}
+.second_page{
+	list-style: none;
+	float:left;
+	width:100%;
+	height:960px;
+	background: #00c9ff;  /* fallback for old browsers */      background: -webkit-linear-gradient(to right, rgb(0, 201, 255), rgb(146, 254, 157));  /* Chrome 10-25, Safari 5.1-6 */      background: linear-gradient(to right, rgb(0, 201, 255), rgb(146, 254, 157)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */      
+}
+.third_page{
+	list-style: none;
+	float:left;
+	width:100%;
+	height:960px;
+	background: #00c9ff;  /* fallback for old browsers */      background: -webkit-linear-gradient(to right, rgb(0, 201, 255), rgb(146, 254, 157));  /* Chrome 10-25, Safari 5.1-6 */      background: linear-gradient(to right, rgb(0, 201, 255), rgb(146, 254, 157)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */      
+}
+.forth_page{
+	list-style: none;
+	float:left;
+	width:100%;
+	height:960px;
+	background: #00c9ff;  /* fallback for old browsers */      background: -webkit-linear-gradient(to right, rgb(0, 201, 255), rgb(146, 254, 157));  /* Chrome 10-25, Safari 5.1-6 */      background: linear-gradient(to right, rgb(0, 201, 255), rgb(146, 254, 157)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */      
+}
+
+/* ----------------------------------------------------------------滚动条分割线-------------------------------------------- */
+#preogressbar:before,
+#preogressbar:after{
+	content:'';
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height: 100%;
+	background: linear-gradient(to top, #008aff, #00ffe7); 
+	filter: blur(10px);
+}
+#preogressbar:after{
+	filter: blur(30px);
+}
+
+#scrollpath{
+	position:fixed;
+	top: 0;
+	right: 0;
+	width:10px;
+	height:100%;
+	background: rgba(255,255,255,0.05);
+}
+#preogressbar{
+	position:fixed;
+	top: 0;
+	right: 0;
+	width:10px;
+	background: linear-gradient(to top, #008aff, #00ffe7); 
+	animation: animate 5s linear infinite;
+}
+@keyframes animate{
+	0%,100%{
+		filter:hue-rotate(0deg);
+	}
+	50%{
+		filter:hue-rotate(360deg);	
+	}
+}
+#percent{
+	position:fixed;
+	top:50%;
+	transform: translateY(-50%) rotateX(180deg) rotateY(180deg);
+	right:15px;
+	color:#fff;
+	font-size: 20px;
+	writing-mode: vertical-rl;
+	/* 文字书写方向垂直 */
+	text-orientation: sideways;
+}
+::-webkit-scrollbar{
+	width:0;
+	height: 0;
+}
+img.img1{
+	position: absolute;
+	width: 100%;  
+	height: 300px;
+  }
+  .card{
+	position: relative;
+	 
+	left: 25%; 
+	top: 0%;
+	width: 200px;
+	height: 300px;
+	background: #fff;
+	transform-style: preserve-3d; /* 开启3D空间 */
+	transform: translate(-50%,-50%) perspective(2000px); 
+	/* 移动X,Y */
+	box-shadow: inset 300px 0 50px rgba(250, 250, 250, 0.5), 0 20px 100px rgba(253, 253, 253, 0.5); /*阴影*/
+	transition: 1s;
+  }
+  .card:hover{
+	transform: translate(-50%,-50%) perspective(2000px) rotate(-10deg);
+	box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5), 0 10px 100px rgba(0, 0, 0, 0.5);
+  }
+  .card::before{ /*上边框*/ 
+	content: '';
+	position: absolute;
+	top:-5px;
+	left: 0;
+	width: 100%;
+	height: 5px;
+	z-index: 10;
+	background: #025b5b;
+	transform: skewX(-45deg); /*X轴扭曲*/
+  }
+  .card::after{ /*右边框*/
+	content: '';
+	position: absolute;
+	top: 0;
+	right: -5px;
+	width: 5px;
+	height: 100%;
+	background-color: #01a36d;
+  }
+  .card .imgBox{ /*图片*/
+	user-select: none; /*不可选取*/
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transform-origin: left; /*更改元素变形位置*/
+	transition: 1s cubic-bezier(.15,1.7,.84,.58);
+  
+  }
+  .card:hover .imgBox{
+	transform: rotateY(-155deg); /*Y轴转动*/
+  }
+  .card .details{ /*文本效果*/
+	position: absolute;
+	top:0;
+	left: 0;
+	box-sizing: border-box;
+	padding: 20px;
+	z-index: -1;
+  }

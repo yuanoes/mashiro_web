@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zn-ch">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒计时</title>
+    <style>
+      /* 设置文字样式 */
+    .div1{
+        position: absolute;
+        left: 35%;
+        top:50%;
+        font-family:  'Times New Roman', Times, serif;
+        font-size: 30px;
+        color: rgb(255, 255, 255);
+           
+
+    }
+     
+    </style>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<nav class="navbar">
+    <div class="inner-width">
+       
+        
+      <div class="navbar-menu">
+        <a href="../index.html"><span style="color: rgb(225, 240, 12);"><strong>🎁时光盒|</strong></span></a>
+         
+        <a href="./daojishi.html">倒计时|</a>
+        <a href="./about.html">关于|</a>
+      </div>
+    </div>
+  </nav>
+<body> 
+ <div class=div1> 
+<DIV id="CountMsg" class="HotDate"    > 
+<span>距2020年结束还有</span>
+<span id="t_d">00天</span> 
+<span id="t_h">00时</span> 
+<span id="t_m">00分</span> 
+<span id="t_s">00秒</span> 
+</DIV> 
+</div>
+<script type="text/javascript"> 
+function getRTime(){ 
+var EndTime= new Date('2020/12/31 00:00:00'); //设置截止时间 
+var NowTime = new Date();//现在的时间 
+var t =EndTime.getTime() - NowTime.getTime(); 
+
+
+var d=Math.floor(t/1000/60/60/24); 
+var h=Math.floor(t/1000/60/60%24); 
+var m=Math.floor(t/1000/60%60); 
+var s=Math.floor(t/1000%60); 
+
+document.getElementById("t_d").innerHTML = d + "天"; 
+document.getElementById("t_h").innerHTML = h + "时"; 
+document.getElementById("t_m").innerHTML = m + "分"; 
+document.getElementById("t_s").innerHTML = s + "秒"; 
+} 
+setInterval(getRTime,1000); 
+</script> 
+</body> 
+</html>
+    

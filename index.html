@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zn-ch">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我与2020</title>
+  <link rel="stylesheet" href="./css/common.css">
+</head>
+
+<body>
+  <!--导航栏  -->
+  <nav class="navbar">
+    <div class="inner-width">
+
+
+      <div class="navbar-menu">
+        <a href="./index.html"><span style="color: rgb(225, 240, 12);"><strong>🎁时光盒</strong></span></a>
+
+        <a href="./html/daojishi.html">|倒计时|</a>
+        <a href="./html/about.html">关于|</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="text">
+    <h1>2020时光盒</h1>
+<!-- 打字机特效 -->
+    <div class="text1">
+      <span class="word">
+<!-- 光标闪烁 -->
+      </span><span class="guangbiao">|</span>
+      <!-- 背景音乐标签 -->
+      <embed height="0" width="0" src="./music/park bird - memories gone by (mp3cut.net)(1).mp3">
+    </div>
+    <div class="open">
+      <a href="./html/zhuye.html"><strong>Open it !</strong> </a>
+    </div>
+  </div>
+<!-- 打字机JavaScript -->
+  <script>
+    //获取元素对象
+    const word = document.querySelector('.word');
+    //变量声明
+    let str = '2020，非同寻常的一年，难以忘却的一年，打开时光的盒子回顾我们的2020';
+    for (let i = 1; i <= str.length; i++) {
+      //启动定时器
+      setTimeout(function () {
+        word.innerHTML = str.substr(0, i);
+      }, (i - 1) * 200);
+    }
+  </script>
+   
+</body>
+
+</html>
